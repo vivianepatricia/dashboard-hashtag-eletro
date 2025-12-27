@@ -99,4 +99,5 @@ ________________________________________
 -	Módulo específico para devoluções (impacto financeiro e ranking por marca)
 
 #### Link para o dashboard completo: 
-https://app.powerbi.com/viewr=eyJrIjoiYzY2MzcwMDItMDhmZC00MzkwLTg4YTYtNGY1MmMwYzcwMjcxIiwidCI6ImQzYTZmNGFiLWZjMGUtNDRiOS04MTA1LTdkZDI0MmYxY2Q4NyJ9&pageName=ReportSectione3ea6826c1e6474d728c
+
+https://app.powerbi.com/view?r=eyJrIjoiYzY2MzcwMDItMDhmZC00MzkwLTg4YTYtNGY1MmMwYzcwMjcxIiwidCI6ImQzYTZmNGFiLWZjMGUtNDRiOS04MTA1LTdkZDI0MmYxY2Q4NyJ9&pageName=ReportSectione3ea6826c1e6474d728c
