@@ -22,7 +22,7 @@ A solução foi desenhada para leitura executiva e exploração:
 Gráfico de Faturamento Atual vs Ano Anterior (evolução mensal).
 
 <p style="text-align:center;">
-  <img src="assets/Imagens/fat-por-continente.png" width="45%">
+  <img src="assets/imagens/fat.png" width="45%">
 </p>
 
 -	Composições e rankings:
@@ -31,7 +31,7 @@ Gráfico de Faturamento Atual vs Ano Anterior (evolução mensal).
 -	Tabela por Continente com Faturamento, Lucro e Vendas
 
 <p style="text-align:center;">
-  <img src="assets/Imagens/fat-por-continente.png" width="45%">
+  <img src="assets/imagens/fat-por-continente.png" width="45%">
 </p>
 
 -	Aba de devoluções com:
