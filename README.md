@@ -22,7 +22,7 @@ A solução foi desenhada para leitura executiva e exploração:
 Gráfico de Faturamento Atual vs Ano Anterior (evolução mensal).
 
 <p style="text-align:center;">
-  <img src="assets/Imagens/fat-por-continente" alt="Faturamento Atual vs Ano Anterior" width="45%">
+  <img src="assets/Imagens/fat-por-continente.png" width="45%">
 </p>
 
 -	Composições e rankings:
@@ -30,10 +30,8 @@ Gráfico de Faturamento Atual vs Ano Anterior (evolução mensal).
 -	Total de Vendas por Tipo de Loja (Física x Online)
 -	Tabela por Continente com Faturamento, Lucro e Vendas
 
-
-
 <p style="text-align:center;">
-  <img src="assets/Imagens/fat-por-continente" alt="Faturamento por Continente" width="45%">
+  <img src="assets/Imagens/fat-por-continente.png" width="45%">
 </p>
 
 -	Aba de devoluções com:
