@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dashboard Hashtag Eletro — Vendas & Devoluções (2020–2022)</title>
+  <meta name="description" content="Dashboard Hashtag Eletro (Power BI) — Vendas & Devoluções | 2020–2022" />
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#101a2e;
+      --text:#e8eefc;
+      --muted:#b9c3df;
+      --accent:#3b82f6;
+      --accent-2:#22c55e;
+      --border:rgba(255,255,255,.08);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      background: radial-gradient(1200px 600px at 15% 0%, rgba(59,130,246,.25), transparent 60%),
+                  radial-gradient(900px 500px at 85% 10%, rgba(34,197,94,.20), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    a{color:inherit}
+    .container{max-width:980px;margin:0 auto;padding:28px 18px 60px}
+    header{
+      padding:18px 0 10px;
+      border-bottom:1px solid var(--border);
+      margin-bottom:18px;
+    }
+    .title{
+      font-size: clamp(22px, 3vw, 34px);
+      margin:0 0 6px;
+      letter-spacing:.2px;
+    }
+    .subtitle{
+      margin:0;
+      color:var(--muted);
+      font-size: 15px;
+    }
+    .pillbar{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 0}
+    .pill{
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.03);
+      padding:7px 10px;
+      border-radius:999px;
+      font-size:13px;
+      color:var(--muted);
+    }
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 4px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:10px 14px;border-radius:10px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
+      text-decoration:none;
+      font-weight:600;
+      transition:.15s ease;
+    }
+    .btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.07)}
+    .btn.primary{background:rgba(59,130,246,.20);border-color:rgba(59,130,246,.35)}
+    .btn.primary:hover{background:rgba(59,130,246,.28)}
+    .btn.success{background:rgba(34,197,94,.18);border-color:rgba(34,197,94,.35)}
+    .btn.success:hover{background:rgba(34,197,94,.25)}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;margin-top:18px}
+    .card{
+      grid-column: span 12;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:16px 16px 14px;
+    }
+    .card h2{
+      font-size:18px;margin:0 0 10px;
+    }
+    .card h3{
+      font-size:15px;margin:14px 0 8px;color:var(--text)
+    }
+    ul{margin:8px 0 0 18px;color:var(--muted)}
+    li{margin:6px 0}
+    .kpi{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap:10px;
+      margin-top:10px;
+    }
+    .kpi .box{
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:12px;
+      background:rgba(0,0,0,.12);
+    }
+    .kpi .label{color:var(--muted);font-size:12px;margin:0 0 6px}
+    .kpi .value{font-size:18px;font-weight:700;margin:0}
+    .note{
+      color:var(--muted);
+      font-size:13px;
+      margin-top:10px;
+    }
+    footer{
+      margin-top:24px;
+      padding-top:14px;
+      border-top:1px solid var(--border);
+      color:var(--muted);
+      font-size:13px;
+    }
+    @media (min-width: 820px){
+      .card.half{grid-column: span 6;}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1 class="title">Dashboard Hashtag Eletro (Power BI) — Vendas &amp; Devoluções | 2020–2022</h1>
+      <p class="subtitle">Projeto de BI para acompanhamento de performance comercial e impacto de devoluções (moeda: USD).</p>
+
+      <div class="pillbar">
+        <span class="pill">Power BI</span>
+        <span class="pill">Vendas</span>
+        <span class="pill">Devoluções</span>
+        <span class="pill">2020 • 2021 • 2022</span>
+        <span class="pill">USD ($)</span>
+      </div>
+
+      <div class="actions">
+        <a class="btn primary" href="https://app.powerbi.com/view?r=eyJrIjoiYzY2MzcwMDItMDhmZC00MzkwLTg4YTYtNGY1MmMwYzcwMjcxIiwidCI6ImQzYTZmNGFiLWZjMGUtNDRiOS04MTA1LTdkZDI0MmYxY2Q4NyJ9" target="_blank" rel="noopener">
+          Abrir dashboard no Power BI
+        </a>
+        <a class="btn" href="#insights">Ver insights</a>
+      </div>
+    </header>
+
+    <main class="grid">
+      <section class="card">
+        <h2>1) Problema de Negócio</h2>
+        <p class="note">
+          A Hashtag Eletro precisava de uma visão consolidada e comparável da performance comercial e do impacto de devoluções, respondendo perguntas como:
+        </p>
+        <ul>
+          <li>Qual foi o <strong>faturamento</strong>, <strong>lucro</strong>, <strong>volume de vendas</strong> e <strong>margem</strong> por ano?</li>
+          <li>Como o resultado evoluiu <strong>mês a mês</strong> e como o ano atual se compara ao <strong>ano anterior</strong>?</li>
+          <li>Qual a participação de <strong>tipo de loja</strong> (Física vs Online) e de <strong>continentes</strong> no desempenho?</li>
+          <li>Qual o impacto financeiro das <strong>devoluções</strong> (quantidade, % e faturamento perdido) e quais <strong>marcas</strong> concentram mais devoluções?</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>2) Contexto</h2>
+        <p class="note">
+          O projeto foi construído no Power BI com bases históricas de vendas (2020, 2021 e 2022) e devoluções, enriquecidas por tabelas de cadastro (produtos, lojas, localidades e clientes).
+        </p>
+        <p class="note"><strong>Abas do dashboard:</strong></p>
+        <ul>
+          <li>Análise de Vendas</li>
+          <li>Devoluções</li>
+        </ul>
+      </section>
+
+      <section class="card half">
+        <h2>3) Premissas da análise</h2>
+        <ul>
+          <li>A moeda do relatório é <strong>USD ($)</strong>.</li>
+          <li>O campo <strong>Ano Selecionado</strong> controla toda a navegação e os KPIs.</li>
+          <li>A comparação “vs. Ano Anterior” considera:
+            <ul>
+              <li>2021 vs 2020</li>
+              <li>2022 vs 2021</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section class="card half">
+        <h2>4) Estratégia / Construção do Dashboard</h2>
+        <ul>
+          <li>KPIs principais no topo: <strong>Faturamento</strong>, <strong>Lucro</strong>, <strong>Total de Vendas</strong> e <strong>Margem</strong>.</li>
+          <li>Gráfico de <strong>Faturamento Atual vs Ano Anterior</strong> (evolução mensal).</li>
+          <li>Composições e rankings:
+            <ul>
+              <li>Faturamento por categoria (ex.: celular, notebook, etc.)</li>
+              <li>Total de Vendas por Tipo de Loja (Física x Online)</li>
+              <li>Tabela por Continente com Faturamento, Lucro e Vendas</li>
+            </ul>
+          </li>
+          <li>Aba de devoluções com indicadores e segmentações:
+            <ul>
+              <li>Faturamento perdido, Qtd devoluções, % faturamento perdido, % devoluções</li>
+              <li>Evolução mensal, mapa por continente e ranking por marca</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section id="insights" class="card">
+        <h2>5) Principais resultados e insights</h2>
+
+        <h3>5.1 Análise de Vendas</h3>
+        <div class="kpi">
+          <div class="box">
+            <p class="label">2020 — Faturamento Total</p>
+            <p class="value">$2.183.760</p>
+          </div>
+          <div class="box">
+            <p class="label">2020 — Lucro Total</p>
+            <p class="value">$1.414.636</p>
+          </div>
+          <div class="box">
+            <p class="label">2020 — Total de Vendas</p>
+            <p class="value">2.630</p>
+          </div>
+          <div class="box">
+            <p class="label">2020 — Margem</p>
+            <p class="value">64,78%</p>
+          </div>
+        </div>
+        <p class="note">
+          Participação por tipo de loja (2020): <strong>Física 83,27%</strong> | <strong>Online 16,73%</strong>.
+          Destaque de faturamento por categoria: <strong>Celular (~$1,80 Mi)</strong>.
+        </p>
+
+        <div class="kpi">
+          <div class="box">
+            <p class="label">2021 — Faturamento Total (vs 2020)</p>
+            <p class="value">$5.982.861 (+174%)</p>
+          </div>
+          <div class="box">
+            <p class="label">2021 — Lucro Total (vs 2020)</p>
+            <p class="value">$3.872.368 (+174%)</p>
+          </div>
+          <div class="box">
+            <p class="label">2021 — Total de Vendas (vs 2020)</p>
+            <p class="value">36.230 (+1278%)</p>
+          </div>
+          <div class="box">
+            <p class="label">2021 — Margem</p>
+            <p class="value">64,72%</p>
+          </div>
+        </div>
+        <p class="note">Tipo de loja (2021): <strong>Física 83,03%</strong> | <strong>Online 16,97%</strong>.</p>
+
+        <div class="kpi">
+          <div class="box">
+            <p class="label">2022 — Faturamento Total (vs 2021)</p>
+            <p class="value">$7.059.459</p>
+          </div>
+          <div class="box">
+            <p class="label">2022 — Lucro Total (vs 2021)</p>
+            <p class="value">$4.555.624</p>
+          </div>
+          <div class="box">
+            <p class="label">2022 — Total de Vendas (vs 2021)</p>
+            <p class="value">45.314</p>
+          </div>
+          <div class="box">
+            <p class="label">2022 — Margem</p>
+            <p class="value">64,53%</p>
+          </div>
+        </div>
+        <p class="note">
+          Tipo de loja (2022): <strong>Física 83,01%</strong> | <strong>Online 16,99%</strong>.
+          Categoria com maior faturamento no ranking: <strong>Notebook (~$4,05 Mi)</strong>.
+        </p>
+
+        <h3>5.2 Devoluções</h3>
+        <div class="kpi">
+          <div class="box">
+            <p class="label">2020 — Faturamento perdido</p>
+            <p class="value">$75.115,72</p>
+          </div>
+          <div class="box">
+            <p class="label">2020 — Devoluções</p>
+            <p class="value">86</p>
+          </div>
+          <div class="box">
+            <p class="label">2020 — % faturamento perdido</p>
+            <p class="value">3,44%</p>
+          </div>
+          <div class="box">
+            <p class="label">2020 — % devoluções</p>
+            <p class="value">3,27%</p>
+          </div>
+        </div>
+
+        <div class="kpi">
+          <div class="box">
+            <p class="label">2021 — Faturamento perdido</p>
+            <p class="value">$154.643,80</p>
+          </div>
+          <div class="box">
+            <p class="label">2021 — Devoluções</p>
+            <p class="value">770</p>
+          </div>
+          <div class="box">
+            <p class="label">2021 — % faturamento perdido</p>
+            <p class="value">2,58%</p>
+          </div>
+          <div class="box">
+            <p class="label">2021 — % devoluções</p>
+            <p class="value">2,13%</p>
+          </div>
+        </div>
+
+        <div class="kpi">
+          <div class="box">
+            <p class="label">2022 — Faturamento perdido</p>
+            <p class="value">$203.273,35</p>
+          </div>
+          <div class="box">
+            <p class="label">2022 — Devoluções</p>
+            <p class="value">972</p>
+          </div>
+          <div class="box">
+            <p class="label">2022 — % faturamento perdido</p>
+            <p class="value">2,88%</p>
+          </div>
+          <div class="box">
+            <p class="label">2022 — % devoluções</p>
+            <p class="value">2,15%</p>
+          </div>
+        </div>
+
+        <p class="note">
+          O ranking evidencia concentração de devoluções em marcas específicas, chegando a <strong>10,20%</strong> no maior pico do gráfico.
+          Apesar do aumento das devoluções em números absolutos, as taxas percentuais se mantêm relativamente controladas (≈2%–3%).
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>6) Entregáveis</h2>
+        <ul>
+          <li>Dashboard interativo no Power BI com KPIs executivos por ano</li>
+          <li>Comparativo anual e evolução mensal</li>
+          <li>Análises por continente, tipo de loja e categoria</li>
+          <li>Módulo específico para devoluções (impacto financeiro e ranking por marca)</li>
+        </ul>
+        <div class="actions" style="margin-top:14px">
+          <a class="btn success" href="https://app.powerbi.com/view?r=eyJrIjoiYzY2MzcwMDItMDhmZC00MzkwLTg4YTYtNGY1MmMwYzcwMjcxIiwidCI6ImQzYTZmNGFiLWZjMGUtNDRiOS04MTA1LTdkZDI0MmYxY2Q4NyJ9" target="_blank" rel="noopener">
+            Link do dashboard completo
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p style="margin:0">
+        © <span id="y"></span> • Dashboard Hashtag Eletro • Publicado via GitHub Pages
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
