@@ -20,10 +20,22 @@ O dashboard foi organizado em duas abas principais:
 A solução foi desenhada para leitura executiva e exploração:
 -	KPIs principais no topo: Faturamento, Lucro, Total de Vendas e Margem.
 Gráfico de Faturamento Atual vs Ano Anterior (evolução mensal).
+
+<p style="text-align:center;">
+  <img src="assets/Imagens/fat-por-continente" alt="Faturamento Atual vs Ano Anterior" width="45%">
+</p>
+
 -	Composições e rankings:
 -	Faturamento por categoria (ex.: celular, notebook, etc.)
 -	Total de Vendas por Tipo de Loja (Física x Online)
 -	Tabela por Continente com Faturamento, Lucro e Vendas
+
+
+
+<p style="text-align:center;">
+  <img src="assets/Imagens/fat-por-continente" alt="Faturamento por Continente" width="45%">
+</p>
+
 -	Aba de devoluções com:
 -	Faturamento perdido, Qtd devoluções, % faturamento perdido, % devoluções
 -	Evolução mensal, mapa por continente e ranking por marca
