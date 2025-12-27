@@ -21,18 +21,24 @@ A solução foi desenhada para leitura executiva e exploração:
 -	KPIs principais no topo: Faturamento, Lucro, Total de Vendas e Margem.
 Gráfico de Faturamento Atual vs Ano Anterior (evolução mensal).
 
+
+
 <p style="text-align:center;">
-  <img src="assets/imagens/fat.png" width="45%">
+  <img src="imagens/fat.png" width="45%">
 </p>
+
 
 -	Composições e rankings:
 -	Faturamento por categoria (ex.: celular, notebook, etc.)
 -	Total de Vendas por Tipo de Loja (Física x Online)
 -	Tabela por Continente com Faturamento, Lucro e Vendas
 
+
+
 <p style="text-align:center;">
-  <img src="assets/imagens/fat-por-continente.png" width="45%">
+  <img src="imagens/fat-por-continente.png" width="45%">
 </p>
+
 
 -	Aba de devoluções com:
 -	Faturamento perdido, Qtd devoluções, % faturamento perdido, % devoluções
